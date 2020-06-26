@@ -6,22 +6,46 @@ namespace Trees
     {
         static void Main(string[] args)
         {
-            TestBFS_PrintAll();
+            //TestBFS_PrintAll();
+            //TestInorder_PrintAll();
+            //TestPreorder_PrintAll();
+            TestPostorder_PrintAll();
 
             Console.ReadLine();
         }
 
+        private static void TestPostorder_PrintAll()
+        {
+            Node<int> n = CreateTestTree();
+            Tree.Postorder_PrintAll(n);
+        }
+
+        private static void TestInorder_PrintAll()
+        {
+            Node<int> n = CreateTestTree();
+            Tree.Inorder_PrintAll(n);
+        }
+
+        private static void TestPreorder_PrintAll()
+        {
+            Node<int> n = CreateTestTree();
+            Tree.Preorder_PrintAll(n);
+        }
+
         private static void TestBFS_PrintAll()
         {
-            Node<int> node7 = new Node<int>() { Data = 7 };
-            Node<int> node5 = new Node<int>() { Data = 5, LeftNode = node7 };
-            Node<int> node4 = new Node<int>() { Data = 4, RightNode = node5 };
-            Node<int> node6 = new Node<int>() { Data = 6 };
-            Node<int> node3 = new Node<int>() { Data = 3, LeftNode = node4, RightNode = node6 };
-            Node<int> node2 = new Node<int>() { Data = 2 };
-            Node<int> node1 = new Node<int>() { Data = 1, LeftNode = node2, RightNode = node3 };
+            Node<int> n = CreateTestTree();
+            Tree.BFS_PrintAll(n);
+        }
 
-            Tree.BFS_PrintAll(node1);
+        private static Node<int> CreateTestTree()
+        {
+            Node<int> node5 = new Node<int>() { Data = 5 };
+            Node<int> node4 = new Node<int>() { Data = 4 };
+            Node<int> node2 = new Node<int>() { Data = 2, RightNode = node5, LeftNode = node4 };
+            Node<int> node3 = new Node<int>() { Data = 3 };
+            Node<int> node1 = new Node<int>() { Data = 1, LeftNode = node2, RightNode = node3 };
+            return node1;
         }
     }
 }
