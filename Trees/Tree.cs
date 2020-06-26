@@ -13,7 +13,7 @@ namespace Trees
             while (queue.Count != 0)
             {
                 Node<T> node = queue.Dequeue();
-                Console.WriteLine(node.Data);
+                Console.Write(node.Data + " ");
                 if (node.LeftNode != null)
                     queue.Enqueue(node.LeftNode);
                 if (node.RightNode != null)
@@ -34,7 +34,7 @@ namespace Trees
 
             //recursive case
             Inorder_PrintAll(n.LeftNode);
-            Console.WriteLine(n.Data);
+            Console.Write(n.Data + " ");
             Inorder_PrintAll(n.RightNode);
         }
 
@@ -50,7 +50,7 @@ namespace Trees
                 return;
 
             //recursive case
-            Console.WriteLine(n.Data);
+            Console.Write(n.Data + " ");
             Preorder_PrintAll(n.LeftNode);
             Preorder_PrintAll(n.RightNode);
         }
@@ -69,8 +69,7 @@ namespace Trees
             //recursive case
             Postorder_PrintAll(n.LeftNode);
             Postorder_PrintAll(n.RightNode);
-
-            Console.WriteLine(n.Data);
+            Console.Write(n.Data + " ");
         }
     }
 }

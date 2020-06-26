@@ -6,9 +6,9 @@ namespace Trees
     {
         static void Main(string[] args)
         {
-            //TestBFS_PrintAll();
-            //TestInorder_PrintAll();
-            //TestPreorder_PrintAll();
+            TestBFS_PrintAll();
+            TestInorder_PrintAll();
+            TestPreorder_PrintAll();
             TestPostorder_PrintAll();
 
             Console.ReadLine();
@@ -16,24 +16,28 @@ namespace Trees
 
         private static void TestPostorder_PrintAll()
         {
+            Console.Write("\n Postorder: ");
             Node<int> n = CreateTestTree();
             Tree.Postorder_PrintAll(n);
         }
 
         private static void TestInorder_PrintAll()
         {
+            Console.Write("\n Inorder: ");
             Node<int> n = CreateTestTree();
             Tree.Inorder_PrintAll(n);
         }
 
         private static void TestPreorder_PrintAll()
         {
+            Console.Write("\n Preorder: ");
             Node<int> n = CreateTestTree();
             Tree.Preorder_PrintAll(n);
         }
 
         private static void TestBFS_PrintAll()
         {
+            Console.Write("\n BFS: ");
             Node<int> n = CreateTestTree();
             Tree.BFS_PrintAll(n);
         }
