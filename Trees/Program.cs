@@ -10,8 +10,24 @@ namespace Trees
             TestInorder_PrintAll();
             TestPreorder_PrintAll();
             TestPostorder_PrintAll();
-
+            TestGetTreeHeight();
+            TestPrintLevels();
             Console.ReadLine();
+        }
+
+
+        private static void TestPrintLevels()
+        {
+            Console.WriteLine("\n Print levels: ");
+            Node<int> n = CreateTestTree();
+            Tree.PrintAllLevels(n);
+        }
+
+        private static void TestGetTreeHeight()
+        {
+            Console.Write("\n Tree height: ");
+            Node<int> n = CreateTestTree();
+            Console.Write(Tree.GetTreeHeight(n));
         }
 
         private static void TestPostorder_PrintAll()

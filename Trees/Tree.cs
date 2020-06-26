@@ -21,19 +21,45 @@ namespace Trees
             }
         }
 
-        internal static void BFS_PrintAllRecursive<T>(Node<T> headNode)
+        internal static void PrintAllLevels<T>(Node<T> n)
         {
-            int levelNumber = 0;
-            while (true)
+            int treeHeight = GetTreeHeight(n);
+            for (int levelNumber = 0; levelNumber < treeHeight; levelNumber++)
             {
-                Console.WriteLine($"Level {levelNumber++}");
-                PrintGivenLevel(headNode, levelNumber);
+                Console.WriteLine($"\n Level {levelNumber}");
+                PrintGivenLevel(n, levelNumber);
             }
         }
 
-        private static void PrintGivenLevel<T>(Node<T> headNode, int levelNumber)
+        internal static int GetTreeHeight<T>(Node<T> n)
         {
-            throw new NotImplementedException();
+            if (n == null)
+                return 0;
+
+            int leftHeight = GetTreeHeight(n.LeftNode);
+            int rightHeight = GetTreeHeight(n.RightNode);
+
+            if (leftHeight > rightHeight)
+                return leftHeight + 1;
+            return rightHeight + 1;
+        }
+
+
+        private static void PrintGivenLevel<T>(Node<T> n, int levelNumber)
+        {
+            if (n == null)
+                return;
+
+            if (levelNumber == 0)
+            {
+                Console.Write(n.Data + " ");
+            }
+            else
+            {
+                PrintGivenLevel(n.LeftNode, levelNumber - 1);
+                PrintGivenLevel(n.RightNode, levelNumber - 1);
+            }
+
         }
 
         /// <summary>
