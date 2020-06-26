@@ -5,7 +5,7 @@ namespace Trees
 {
     internal class Tree
     {
-        internal static void BFS_ByQueue_PrintAll<T>(Node<T> headNode)
+        public static void BFS_ByQueue_PrintAll<T>(Node<T> headNode)
         {
             Queue<Node<T>> queue = new Queue<Node<T>>();
             queue.Enqueue(headNode);
@@ -21,7 +21,7 @@ namespace Trees
             }
         }
 
-        internal static void PrintAllLevels<T>(Node<T> n)
+        public static void PrintAllLevels<T>(Node<T> n)
         {
             int treeHeight = GetTreeHeight(n);
             for (int levelNumber = 0; levelNumber < treeHeight; levelNumber++)
@@ -31,7 +31,7 @@ namespace Trees
             }
         }
 
-        internal static int GetTreeHeight<T>(Node<T> n)
+        public static int GetTreeHeight<T>(Node<T> n)
         {
             if (n == null)
                 return 0;
@@ -45,7 +45,7 @@ namespace Trees
         }
 
 
-        private static void PrintGivenLevel<T>(Node<T> n, int levelNumber)
+        public static void PrintGivenLevel<T>(Node<T> n, int levelNumber)
         {
             if (n == null)
                 return;
