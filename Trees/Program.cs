@@ -44,11 +44,15 @@ namespace Trees
 
         private static Node<int> CreateTestTree()
         {
-            Node<int> node5 = new Node<int>() { Data = 5 };
-            Node<int> node4 = new Node<int>() { Data = 4 };
-            Node<int> node2 = new Node<int>() { Data = 2, RightNode = node5, LeftNode = node4 };
-            Node<int> node3 = new Node<int>() { Data = 3 };
-            Node<int> node1 = new Node<int>() { Data = 1, LeftNode = node2, RightNode = node3 };
+            Node<int> node7 = new Node<int>() { Data = 30 };
+            Node<int> node6 = new Node<int>() { Data = 45 };
+            Node<int> node5 = new Node<int>() { Data = 40, LeftNode = node7, RightNode = node6 };
+
+            Node<int> node4 = new Node<int>() { Data = 57 };
+            Node<int> node3 = new Node<int>() { Data = 70 };
+            Node<int> node2 = new Node<int>() { Data = 60, LeftNode = node4, RightNode = node3 };
+
+            Node<int> node1 = new Node<int>() { Data = 50, LeftNode = node5, RightNode = node2 };
             return node1;
         }
     }

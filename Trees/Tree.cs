@@ -21,20 +21,19 @@ namespace Trees
             }
         }
 
-        internal static void BFS_PrintAllSeparateLines<T>(Node<T> headNode)
+        internal static void BFS_PrintAllRecursive<T>(Node<T> headNode)
         {
-            Queue<Node<T>> queue = new Queue<Node<T>>();
-            queue.Enqueue(headNode);
-
-            while (queue.Count != 0)
+            int levelNumber = 0;
+            while (true)
             {
-                Node<T> node = queue.Dequeue();
-                Console.Write(node.Data + " ");
-                if (node.LeftNode != null)
-                    queue.Enqueue(node.LeftNode);
-                if (node.RightNode != null)
-                    queue.Enqueue(node.RightNode);
+                Console.WriteLine($"Level {levelNumber++}");
+                PrintGivenLevel(headNode, levelNumber);
             }
+        }
+
+        private static void PrintGivenLevel<T>(Node<T> headNode, int levelNumber)
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>
