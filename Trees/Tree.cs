@@ -29,15 +29,13 @@ namespace Trees
         internal static void Inorder_PrintAll<T>(Node<T> n)
         {
             //base case
+            if (n == null)
+                return;
 
             //recursive case
-            if (n.LeftNode != null)
-                Inorder_PrintAll(n.LeftNode);
-
+            Inorder_PrintAll(n.LeftNode);
             Console.WriteLine(n.Data);
-
-            if (n.RightNode != null)
-                Inorder_PrintAll(n.RightNode);
+            Inorder_PrintAll(n.RightNode);
         }
 
         /// <summary>
@@ -48,15 +46,13 @@ namespace Trees
         internal static void Preorder_PrintAll<T>(Node<T> n)
         {
             //base case
+            if (n == null)
+                return;
 
             //recursive case
             Console.WriteLine(n.Data);
-
-            if (n.LeftNode != null)
-                Preorder_PrintAll(n.LeftNode);
-
-            if (n.RightNode != null)
-                Preorder_PrintAll(n.RightNode);
+            Preorder_PrintAll(n.LeftNode);
+            Preorder_PrintAll(n.RightNode);
         }
 
         /// <summary>
@@ -67,13 +63,12 @@ namespace Trees
         internal static void Postorder_PrintAll<T>(Node<T> n)
         {
             //base case
+            if (n == null)
+                return;
 
             //recursive case
-            if (n.LeftNode != null)
-                Preorder_PrintAll(n.LeftNode);
-
-            if (n.RightNode != null)
-                Preorder_PrintAll(n.RightNode);
+            Postorder_PrintAll(n.LeftNode);
+            Postorder_PrintAll(n.RightNode);
 
             Console.WriteLine(n.Data);
         }
