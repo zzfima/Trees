@@ -1,10 +1,14 @@
-﻿namespace Trees
+﻿using System;
+
+namespace Trees
 {
     class Program
     {
         static void Main(string[] args)
         {
             TestBFS_PrintAll();
+
+            Console.ReadLine();
         }
 
         private static void TestBFS_PrintAll()
