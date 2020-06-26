@@ -39,7 +39,7 @@ namespace Trees
         {
             Console.Write("\n BFS: ");
             Node<int> n = CreateTestTree();
-            Tree.BFS_PrintAll(n);
+            Tree.BFS_ByQueue_PrintAll(n);
         }
 
         private static Node<int> CreateTestTree()

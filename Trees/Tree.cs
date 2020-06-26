@@ -5,7 +5,23 @@ namespace Trees
 {
     internal class Tree
     {
-        internal static void BFS_PrintAll<T>(Node<T> headNode)
+        internal static void BFS_ByQueue_PrintAll<T>(Node<T> headNode)
+        {
+            Queue<Node<T>> queue = new Queue<Node<T>>();
+            queue.Enqueue(headNode);
+
+            while (queue.Count != 0)
+            {
+                Node<T> node = queue.Dequeue();
+                Console.Write(node.Data + " ");
+                if (node.LeftNode != null)
+                    queue.Enqueue(node.LeftNode);
+                if (node.RightNode != null)
+                    queue.Enqueue(node.RightNode);
+            }
+        }
+
+        internal static void BFS_PrintAllSeparateLines<T>(Node<T> headNode)
         {
             Queue<Node<T>> queue = new Queue<Node<T>>();
             queue.Enqueue(headNode);
