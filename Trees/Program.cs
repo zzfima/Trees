@@ -8,52 +8,62 @@ namespace Trees
         {
             TestBFS_PrintAll();
             TestInorder_PrintAll();
+
             TestPreorder_PrintAll();
+            TestPreorder_Stack_PrintAll();
+
             TestPostorder_PrintAll();
             TestGetTreeHeight();
             TestPrintLevels();
+
             Console.ReadLine();
         }
 
+        private static void TestPreorder_Stack_PrintAll()
+        {
+            Console.Write("\n Preorder(by Stack): \t");
+            Node<int> n = CreateTestTree();
+            Tree.Preorder_Stack_PrintAll(n);
+        }
 
         private static void TestPrintLevels()
         {
-            Console.WriteLine("\n Print levels: ");
+            Console.WriteLine("\n Print levels: \t\t");
             Node<int> n = CreateTestTree();
             Tree.PrintAllLevels(n);
         }
 
         private static void TestGetTreeHeight()
         {
-            Console.Write("\n Tree height: ");
+            Console.Write("\n Tree height: \t\t");
             Node<int> n = CreateTestTree();
             Console.Write(Tree.GetTreeHeight(n));
         }
 
         private static void TestPostorder_PrintAll()
         {
-            Console.Write("\n Postorder: ");
+            Console.Write("\n Postorder: \t\t");
             Node<int> n = CreateTestTree();
             Tree.Postorder_PrintAll(n);
         }
 
         private static void TestInorder_PrintAll()
         {
-            Console.Write("\n Inorder: ");
+            Console.Write("\n Inorder: \t\t");
             Node<int> n = CreateTestTree();
             Tree.Inorder_PrintAll(n);
         }
 
         private static void TestPreorder_PrintAll()
         {
-            Console.Write("\n Preorder: ");
+            Console.Write("\n Preorder: \t\t");
             Node<int> n = CreateTestTree();
             Tree.Preorder_PrintAll(n);
         }
 
         private static void TestBFS_PrintAll()
         {
-            Console.Write("\n BFS: ");
+            Console.Write("\n BFS: \t\t\t");
             Node<int> n = CreateTestTree();
             Tree.BFS_ByQueue_PrintAll(n);
         }

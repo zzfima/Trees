@@ -97,6 +97,28 @@ namespace Trees
         }
 
         /// <summary>
+        /// Preorder (Root, Left, Right)
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="n"></param>
+        internal static void Preorder_Stack_PrintAll<T>(Node<T> n)
+        {
+            Stack<Node<T>> s = new Stack<Node<T>>();
+            s.Push(n);
+
+            while (s.Count != 0)
+            {
+                Node<T> nt = s.Pop();
+                Console.Write(nt.Data + " ");
+
+                if (nt.RightNode != null)
+                    s.Push(nt.RightNode);
+                if (nt.LeftNode != null)
+                    s.Push(nt.LeftNode);
+            }
+        }
+
+        /// <summary>
         /// Postorder(Left, Right, Root)
         /// </summary>
         /// <typeparam name="T"></typeparam>
@@ -111,6 +133,31 @@ namespace Trees
             Postorder_PrintAll(n.LeftNode);
             Postorder_PrintAll(n.RightNode);
             Console.Write(n.Data + " ");
+        }
+
+        internal static void Inorder_Stack_PrintAll<T>(Node<T> n)
+        {
+            Stack<Node<T>> s = new Stack<Node<T>>();
+            s.Push(n);
+
+            while (s.Count != 0)
+            {
+                Node<T> nt = s.Peek();
+                if(nt.LeftNode!= null)
+                {
+                    s.Push(nt.LeftNode);
+                    continue;
+                }
+
+
+
+                Console.Write(nt.Data + " ");
+
+                if (nt.RightNode != null)
+                    s.Push(nt.RightNode);
+                if (nt.LeftNode != null)
+                    s.Push(nt.LeftNode);
+            }
         }
     }
 }
